@@ -73,6 +73,8 @@ class HomeScreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: GridView.builder(
+                shrinkWrap: true, // ارتفاع رو بر اساس محتوای خودش تنظیم کن
+                physics: const NeverScrollableScrollPhysics(),
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                   crossAxisSpacing: 16,
