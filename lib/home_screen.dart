@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:loaging_animation/data/flutter_spinkit_list.dart';
 
 import 'package:loaging_animation/data/loding_animation_widget_list.dart';
 import 'package:loaging_animation/widget/animation_grid_widget.dart';
 
 // ignore: must_be_immutable
 class HomeScreen extends StatelessWidget {
-  HomeScreen({super.key});
-
-
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -32,6 +31,7 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             Text("Flutter Spinkit", style: TextStyle(color: Colors.white)),
+            animationGridWidget(flutterspinkitlist),
           ],
         ),
       ),
