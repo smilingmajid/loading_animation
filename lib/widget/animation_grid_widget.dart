@@ -4,7 +4,7 @@ Widget animationGridWidget(List animationList) {
   return Padding(
     padding: const EdgeInsets.all(16.0),
     child: GridView.builder(
-      shrinkWrap: true, 
+      shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
@@ -14,6 +14,9 @@ Widget animationGridWidget(List animationList) {
       ),
       itemCount: animationList.length,
       itemBuilder: (context, index) {
+        final item = animationList[index];
+        final widgetItem = item["widget"];
+
         return Card(
           color: const Color.fromARGB(150, 30, 30, 30),
           shape: RoundedRectangleBorder(
@@ -22,11 +25,11 @@ Widget animationGridWidget(List animationList) {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              animationList[index]["widget"],
+             
+              widgetItem is Function ? widgetItem() : widgetItem,
               const SizedBox(height: 8),
-
               Text(
-                animationList[index]["name"],
+                item["name"],
                 style: const TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
