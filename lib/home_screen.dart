@@ -177,43 +177,7 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             Text("Flutter Spinkit", style: TextStyle(color: Colors.white)),
-            Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: GridView.builder(
-                shrinkWrap: true, // ارتفاع رو بر اساس محتوای خودش تنظیم کن
-                physics: const NeverScrollableScrollPhysics(),
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  crossAxisSpacing: 16,
-                  mainAxisSpacing: 16,
-                  childAspectRatio: 1,
-                ),
-                itemCount: flutterspinkitlist.length,
-                itemBuilder: (context, index) {
-                  return Card(
-                    color: const Color.fromARGB(150, 30, 30, 30),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        flutterspinkitlist[index]["widget"],
-                        const SizedBox(height: 8),
 
-                        Text(
-                          flutterspinkitlist[index]["name"],
-                          style: const TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ],
-                    ),
-                  );
-                },
-              ),
-            ),
           ],
         ),
       ),
