@@ -59,3 +59,4 @@ final List<Map<String, dynamic>> lodingAnimationList = [
   },
 
 ];
+ 
