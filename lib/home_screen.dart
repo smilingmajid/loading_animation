@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:loading_animation_widget/loading_animation_widget.dart';
+import 'package:loaging_animation/data/loding_animation_widget_list.dart';
+import 'package:loaging_animation/widget/animation_grid_widget.dart';
 
 // ignore: must_be_immutable
 class HomeScreen extends StatelessWidget {
@@ -52,7 +53,6 @@ class HomeScreen extends StatelessWidget {
     },
   ];
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -66,43 +66,8 @@ class HomeScreen extends StatelessWidget {
               style: TextStyle(color: Colors.white),
             ),
 
-            
-            Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: GridView.builder(
-                shrinkWrap: true, // ارتفاع رو بر اساس محتوای خودش تنظیم کن
-                physics: const NeverScrollableScrollPhysics(),
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  crossAxisSpacing: 16,
-                  mainAxisSpacing: 16,
-                  childAspectRatio: 1,
-                ),
-                itemCount: lAWList.length,
-                itemBuilder: (context, index) {
-                  return Card(
-                    color: const Color.fromARGB(150, 30, 30, 30),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        lAWList[index]["widget"](),
-                        const SizedBox(height: 8),
-                        Text(
-                          lAWList[index]["name"],
-                          style: const TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ],
-                    ),
-                  );
-                },
-              ),
-            ),
+            animationGridWidget(lodingAnimationList),
+
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Divider(
@@ -111,7 +76,6 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             Text("Flutter Spinkit", style: TextStyle(color: Colors.white)),
-
           ],
         ),
       ),
