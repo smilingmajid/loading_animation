@@ -4,7 +4,7 @@ import 'package:loaging_animation/data/flutter_spinkit_list.dart';
 import 'package:loaging_animation/data/loding_animation_widget_list.dart';
 import 'package:loaging_animation/widget/animation_grid_widget.dart';
 
-// ignore: must_be_immutable
+
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
@@ -13,6 +13,7 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color.fromARGB(115, 50, 50, 50),
       body: SingleChildScrollView(
+        
         child: Column(
           children: [
             SizedBox(height: 14),
