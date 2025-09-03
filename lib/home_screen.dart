@@ -117,6 +117,8 @@ class HomeScreen extends StatelessWidget {
                 },
               ),
             ),
+            Divider(color: const Color.fromARGB(150, 30, 30, 30), thickness: 5),
+            Text("Flutter Spinkit", style: TextStyle(color: Colors.white)),
           ],
         ),
       ),
